@@ -1,5 +1,11 @@
 """High S/N Cutoff"""
 
+"""
+    high_stn_cutoff() function used to isolate galaxys with high signal to noise values and save their plots for further verification 
+    of accuracy
+"""
+
+
 def high_stn_cutoff(data):
     signaltonoise = data['Area'] / data['Area Error']
     highstn_index = np.where((data['Sigma'] > 5) & (signaltonoise > 10))
