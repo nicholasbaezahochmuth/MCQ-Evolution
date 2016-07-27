@@ -18,7 +18,7 @@ from scipy import interpolate
 ##       isolate the cat_file (file name) and cat_z (redshift) data to use
 ##       in the read_sdss() function
 
-cat = fits.getdata('//Python/sdss_compact_dr12_sn8_oii.fits', 1)
+cat = fits.getdata('~/sdss_compact_dr12_sn8_oii.fits', 1)
 cat_file = cat['file']
 cat_z = cat['z']
 
@@ -29,7 +29,7 @@ cat_z = cat['z']
 
 def read_sdss(name, z=0.):
     
-    root = '//Python/Harvard/cg_data/spectra'
+    root = '~/spectra'
     file_name = root + '/' + name
     global image_data, title
     title = name
