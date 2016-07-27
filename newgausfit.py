@@ -37,5 +37,5 @@ def fitsdss_hdelta2(lam, flux, sigma):
     #return area, area_error, popt, perr, val
     print 'Gaussian Area:', area
     print 'Gaussian Area Error:', area_error
-    #plt.savefig('//Users/nicholashochmuth/Python/Harvard/compact_galaxies/cg_output/' + title + '.png', dpi = 400)
+    #plt.savefig('~/cg_output/' + title + '.png', dpi = 400)
 
