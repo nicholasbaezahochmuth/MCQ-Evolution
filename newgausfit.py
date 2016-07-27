@@ -1,3 +1,5 @@
+##      g1() function is an extended Gaussian equation, which includes an additional Continuum in the curve to 
+##      account for the shape of the H-delta absorption line
 
 def g1(x, *p):
     a = p[0]
@@ -9,6 +11,15 @@ def g1(x, *p):
 
 import numpy
 import warnings
+
+##      fitsdss_hdelta2() function is the second version of the curve fitting routine
+##      uses a two step fit, initially fitting the extended Gaussian, and using those best fit values to fit a standard gaussian curve
+##      this technique decreased errors the fit 
+
+##      input: wavelength, flux, standard deviation
+##      output: area for gaussian curve, area error for gaussian curve, 
+##              popt = optimal parameters for Gaussian fit
+##              pcov = covariant parameters for Gaussian fit
 
 def fitsdss_hdelta2(lam, flux, sigma):
     global y2, sigma2, x1
