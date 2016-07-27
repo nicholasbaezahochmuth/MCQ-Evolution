@@ -4,11 +4,20 @@ from astropy.io import fits
 import numpy as np
 import astropy.units as u
 
+"""
+    created arrays of the Spectra IDs for relations between data sets
+    EpA data set contained calculated ages of the galaxies
+"""
+
 cat_ID = cat['BESTOBJID']
-EpA = fits.getdata('//Python/EpA_Results.fits')
+EpA = fits.getdata('~/EpA_Results.fits')
 
 
 cosmo = LambdaCDM(H0=70, Om0=0.3, Ode0=0.7)
+
+"""
+    two sections below for converting the age data to Z values and GYrs so that they could be plotted
+"""
 
 sb_age_list_gyr=[]
 sb_age_list_z = []
@@ -19,7 +28,6 @@ for i in zrange:
     sb_age_list_gyr.append(age_diff * age.unit)
     if age_diff >= 0:
         sb_age_list_z.append(astropy.cosmology.z_at_value(cosmo.age, sb_age_list_gyr[i]))
-
 
 sb_age_list_z_2 = []
 sb_age_list_gyr_2 = []
@@ -34,7 +42,7 @@ for i in zrange2:
 
 plt.xlabel(r'$Formation$ $Redshift$', size=16)
 plt.ylabel(r'$Frequency$ $(a.u.)$', size=16)
-#plt.savefig('//Python/Harvard/SDSSprojectpaper/figures/eps_files/NNNEWW/sb_z_dist2.eps', dpi=1200)
+#plt.savefig('~/sb_z_dist2.eps', dpi=1200)
 
 
 x = sb_age_list_z
