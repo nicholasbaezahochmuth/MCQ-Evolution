@@ -28,7 +28,7 @@ def high_stn_cutoff(data):
     plt.xlabel('Wavelength (angstroms)')
     plt.ylabel('Flux')
     plt.title(cat_file[i])
-    High_STN_root = '//Users/nicholashochmuth/Python/Harvard/compact_galaxies/cg_output/High_STN/'
+    High_STN_root = '~/High_STN/'
     plt.savefig(High_STN_root + cat_file[i] + '.png', dpi = 300)
     plt.close()
     return popt, perr
