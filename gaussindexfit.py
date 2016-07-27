@@ -31,7 +31,7 @@ def gaussindex(image_data, lower_limit, upper_limit):
     plt.title(title)
     plt.xlabel('Wavelength (angstroms)')
     plt.ylabel('Flux')
-    #plt.savefig('//Users/nicholashochmuth/Python/Harvard/compact_galaxies/cg_output/Cont_test' + title + '.png')
+    #plt.savefig('~/Cont_test' + title + '.png')
     #plt.close()
     print popt, perr
     return popt
