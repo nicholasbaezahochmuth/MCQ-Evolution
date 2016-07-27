@@ -2,19 +2,15 @@
 
 import numpy as np
 
-def high_stn_integral(n, lower_limit=4076., upper_limit=4130.):
-    read_sdss(cat_file[n], cat_z[n])
-    areaindex = np.where((image_data.lam > lower_limit) & (image_data.lam < upper_limit))
-    continuum(image_data.lam, image_data.flux)    
-    flux = (image_data.flux / cont) - 1
-    sigma = (image_data.sigma / cont)
-    plt.plot(image_data.lam[areaindex], flux[areaindex])
-    area = np.absolute(np.sum(flux[areaindex]))
-    area_error = np.sqrt(np.sum((sigma ** 2)[areaindex]))
-    print 'Integral Area:',  area
-    print 'Integral Area Error:',  area_error
     
+"""
+    high_stn_integral2() function is used to take the integral of the H-delta absorption line to find the area under the curve
+    this value was compared to the area of the gaussian fit to test the accuracy of the method
     
+    input:  n = file number (to call from SDSS spectra catalogue)
+            lower and upper limit (to define H-delta aborption line location)
+    output: area, area_error (to be compared to Gaussian values)
+"""
     
 def high_stn_integral2(n):
     global area2, area_error2
@@ -25,6 +21,11 @@ def high_stn_integral2(n):
     area_error2 = np.sqrt(np.sum(sigma2 ** 2))
     print 'Integral Area:', area2
     print 'Integral Area Error:', area_error2
+
+"""
+    area_diff_list() function to create a list of the comparisons between the Gaussian fit area, and the Integral area
+    used to calculate accuracy of the fit
+"""
 
 def area_diff_list(n):
     area_diff_list2 = []    
