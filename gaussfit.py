@@ -10,6 +10,9 @@ from astropy.io import fits
 from matplotlib.pyplot import *
 import numpy
 
+"""
+    gaussfit() is the first version of the gaussian fit function, further updated later to fitsdss_hdelta2()
+"""
 
 def gaussfit(data):
     x = data.lam
@@ -26,6 +29,10 @@ def gaussfit(data):
     plt.ylabel('Flux')
     return perr
        #note this correction
+
+"""
+    standard gaussian equation for curve fitting
+"""
 
 def gaus(x,*p):
     a = p[0]

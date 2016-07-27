@@ -1,5 +1,11 @@
 import warnings
 
+##    sdss_catalogue() function to create a catalogue of curve_fit output
+##
+##          input: size of galaxy catalogue
+##          output: fitting parameters from the fitsdss_hdelta() function 
+
+
 def sdss_catalogue(size_array):
     global cat_values    
     cat_values = []
