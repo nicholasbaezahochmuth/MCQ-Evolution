@@ -5,6 +5,13 @@ Created on Fri Sep  4 10:57:07 2015
 @author: nicholashochmuth
 """
 
+"""
+    fits_EAcatalogue() function used to create a FITS table from the data exported through the curve fitting process.
+    There is definitely a more efficient way of doing this, but at this point I had not learned much about Pandas or 
+    more efficient data manipulation
+"""
+
+
 def fits_EAcatalogue(c, f):
     #global size    
     size = len(f)
@@ -45,4 +52,4 @@ def fits_EAcatalogue(c, f):
     col10 = fits.Column(name='Area Error', format='E', array=area_error_list)
     cols = fits.ColDefs([col0, col1, col2, col3, col4, col5, col6, col7, col8, col9, col10])
     tbhdu = fits.BinTableHDU.from_columns(cols)
-    tbhdu.writeto('//Users/nicholashochmuth/Python/Harvard/compact_galaxies/cg_output/EA_Catalog.fits')
+    tbhdu.writeto('~/EA_Catalog.fits')
